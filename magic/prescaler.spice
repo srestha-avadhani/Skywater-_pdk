@@ -1,0 +1,237 @@
+* SPICE3 file created from prescaler.ext - technology: sky130A
+.lib "/home/sresthavadhani/sky/sky130A/libs.tech/ngspice/sky130.lib.spice" tt
+.param SUPPLY = 1.8
+.global vdd gnd
+
+Vdd vdd gnd 'SUPPLY'
+Vin_clk clk gnd pulse 0 1.8 0.5n 100p 100p 5n 10n
+Vin_r mc1 gnd 0
+
+X0 tspc_0/Z3 tspc_0/Z2 tspc_0/Z4 VSUBS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.8e+06u l=150000u
+X1 tspc_0/Z4 clk GND VSUBS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.8e+06u l=150000u
+X2 tspc_0/Z1 tspc_0/D VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2.8e+06u l=150000u
+X3 tspc_0/Z2 tspc_0/D GND VSUBS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=450000u l=150000u
+X4 Out tspc_0/a_740_n680# VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=4e+06u l=150000u
+X5 tspc_0/a_740_n680# tspc_0/Z3 VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=150000u
+X6 tspc_0/Z2 clk tspc_0/Z1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2.8e+06u l=150000u
+X7 Out tspc_0/a_740_n680# GND VSUBS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=150000u
+X8 tspc_0/a_740_n680# clk tspc_0/a_630_n680# VSUBS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X9 tspc_0/a_630_n680# tspc_0/Z3 GND VSUBS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X10 tspc_0/Z3 clk VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2.9e+06u l=150000u
+X11 tspc_1/Z3 tspc_1/Z2 tspc_1/Z4 VSUBS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.8e+06u l=150000u
+X12 tspc_1/Z4 clk GND VSUBS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.8e+06u l=150000u
+X13 tspc_1/Z1 Out VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2.8e+06u l=150000u
+X14 tspc_1/Z2 Out GND VSUBS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=450000u l=150000u
+X15 tspc_1/Q m1_2700_2190# VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=4e+06u l=150000u
+X16 m1_2700_2190# tspc_1/Z3 VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=150000u
+X17 tspc_1/Z2 clk tspc_1/Z1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2.8e+06u l=150000u
+X18 tspc_1/Q m1_2700_2190# GND VSUBS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=150000u
+X19 m1_2700_2190# clk tspc_1/a_630_n680# VSUBS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X20 tspc_1/a_630_n680# tspc_1/Z3 GND VSUBS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X21 tspc_1/Z3 clk VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2.9e+06u l=150000u
+X22 tspc_2/Z3 tspc_2/Z2 tspc_2/Z4 VSUBS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.8e+06u l=150000u
+X23 tspc_2/Z4 clk GND VSUBS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.8e+06u l=150000u
+X24 tspc_2/Z1 tspc_2/D VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2.8e+06u l=150000u
+X25 tspc_2/Z2 tspc_2/D GND VSUBS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=450000u l=150000u
+X26 tspc_2/Q tspc_2/a_740_n680# VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=4e+06u l=150000u
+X27 tspc_2/a_740_n680# tspc_2/Z3 VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=150000u
+X28 tspc_2/Z2 clk tspc_2/Z1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2.8e+06u l=150000u
+X29 tspc_2/Q tspc_2/a_740_n680# GND VSUBS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=150000u
+X30 tspc_2/a_740_n680# clk tspc_2/a_630_n680# VSUBS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X31 tspc_2/a_630_n680# tspc_2/Z3 GND VSUBS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X32 tspc_2/Z3 clk VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2.9e+06u l=150000u
+X33 tspc_0/D tspc_2/Q VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=150000u
+X34 tspc_0/D tspc_1/Q VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=150000u
+X35 nand_0/z1 tspc_2/Q GND VSUBS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X36 tspc_0/D tspc_1/Q nand_0/z1 VSUBS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X37 tspc_2/D mc1 VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=150000u
+X38 tspc_2/D m1_2700_2190# VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=150000u
+X39 nand_1/z1 mc1 GND VSUBS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X40 tspc_2/D m1_2700_2190# nand_1/z1 VSUBS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+C0 tspc_2/Z3 clk 0.45fF
+C1 tspc_0/Z3 tspc_1/Q 0.13fF
+C2 tspc_2/D GND 0.05fF
+C3 tspc_0/a_630_n680# gnd 0.00fF
+C4 tspc_2/Q tspc_2/Z3 0.05fF
+C5 tspc_1/Z4 tspc_0/a_740_n680# 0.01fF
+C6 tspc_1/a_630_n680# clk 0.01fF
+C7 Out tspc_0/a_740_n680# 0.21fF
+C8 m1_2700_2190# clk 0.01fF
+C9 tspc_0/Z1 tspc_0/Z3 0.06fF
+C10 tspc_1/Z2 tspc_0/a_740_n680# 0.01fF
+C11 tspc_0/a_630_n680# GND 0.63fF
+C12 tspc_2/Z4 clk 0.12fF
+C13 tspc_0/Z4 tspc_0/a_630_n680# 0.12fF
+C14 tspc_2/Z1 tspc_2/Z2 1.07fF
+C15 tspc_0/Z2 mc1 0.06fF
+C16 tspc_2/a_630_n680# clk 0.01fF
+C17 tspc_0/Z3 tspc_0/D 0.05fF
+C18 tspc_2/a_740_n680# tspc_2/Z3 0.33fF
+C19 gnd tspc_1/Z4 0.00fF
+C20 tspc_0/Z2 GND 0.16fF
+C21 tspc_1/Z1 tspc_1/Z3 0.06fF
+C22 tspc_2/Q tspc_2/a_630_n680# 0.04fF
+C23 tspc_0/Z4 tspc_0/Z2 0.36fF
+C24 tspc_0/Z2 tspc_1/Q 0.06fF
+C25 tspc_1/Z2 mc1 0.06fF
+C26 tspc_1/Z4 GND 0.44fF
+C27 Out GND 0.44fF
+C28 tspc_1/Z2 GND 0.17fF
+C29 tspc_2/D tspc_2/Z2 0.09fF
+C30 tspc_1/Z4 tspc_1/Q 0.16fF
+C31 Out tspc_1/Q 0.91fF
+C32 tspc_0/Z1 tspc_0/Z2 1.07fF
+C33 tspc_2/Z4 tspc_2/a_740_n680# 0.08fF
+C34 tspc_1/Z2 tspc_1/Q 0.06fF
+C35 nand_1/z1 gnd 0.01fF
+C36 tspc_2/a_740_n680# tspc_2/a_630_n680# 0.19fF
+C37 nand_1/z1 mc1 0.01fF
+C38 tspc_2/Z3 GND 0.27fF
+C39 tspc_1/a_630_n680# gnd 0.00fF
+C40 nand_1/z1 GND 0.16fF
+C41 tspc_0/D tspc_0/Z2 0.09fF
+C42 m1_2700_2190# mc1 0.14fF
+C43 tspc_1/a_630_n680# GND 0.61fF
+C44 tspc_1/Z3 tspc_1/Z4 0.65fF
+C45 tspc_2/Z4 gnd 0.00fF
+C46 m1_2700_2190# GND 0.22fF
+C47 Out tspc_1/Z3 0.11fF
+C48 tspc_2/D tspc_2/Z1 0.15fF
+C49 tspc_2/a_630_n680# gnd 0.00fF
+C50 tspc_1/Z2 tspc_1/Z3 0.16fF
+C51 tspc_1/a_630_n680# tspc_1/Q 0.04fF
+C52 tspc_2/Q clk 0.05fF
+C53 m1_2700_2190# tspc_1/Q 0.38fF
+C54 tspc_2/Z4 GND 0.44fF
+C55 tspc_2/a_630_n680# GND 0.61fF
+C56 tspc_0/Z3 tspc_0/a_630_n680# 0.05fF
+C57 tspc_2/Z3 tspc_2/Z2 0.16fF
+C58 clk tspc_0/a_740_n680# 0.14fF
+C59 tspc_2/a_740_n680# clk 0.01fF
+C60 tspc_1/a_630_n680# tspc_1/Z3 0.05fF
+C61 tspc_1/Z3 m1_2700_2190# 0.33fF
+C62 tspc_2/Q tspc_2/a_740_n680# 0.20fF
+C63 tspc_0/Z3 tspc_0/Z2 0.16fF
+C64 tspc_2/Q nand_0/z1 0.01fF
+C65 tspc_0/Z3 Out 0.05fF
+C66 tspc_2/Z4 tspc_2/Z2 0.36fF
+C67 clk mc1 0.04fF
+C68 tspc_2/a_630_n680# tspc_2/Z2 0.01fF
+C69 tspc_2/Z3 tspc_2/Z1 0.06fF
+C70 tspc_1/Z1 tspc_1/Z4 0.00fF
+C71 clk GND 0.07fF
+C72 tspc_1/Z1 Out 0.08fF
+C73 tspc_2/Q mc1 0.04fF
+C74 tspc_1/Z1 tspc_1/Z2 1.07fF
+C75 tspc_0/a_630_n680# tspc_0/Z2 0.01fF
+C76 tspc_0/Z4 clk 0.12fF
+C77 tspc_2/Q GND 0.35fF
+C78 clk tspc_1/Q 0.60fF
+C79 Out tspc_0/a_630_n680# 0.04fF
+C80 tspc_2/Q tspc_1/Q 0.19fF
+C81 tspc_0/Z1 vdd 0.02fF
+C82 tspc_2/Z3 tspc_2/D 0.05fF
+C83 tspc_2/Z4 tspc_2/Z1 0.00fF
+C84 gnd nand_0/z1 0.01fF
+C85 nand_1/z1 tspc_2/D 0.24fF
+C86 GND tspc_0/a_740_n680# 0.22fF
+C87 tspc_2/a_740_n680# GND 0.22fF
+C88 tspc_1/Z3 clk 0.45fF
+C89 tspc_0/D vdd 0.06fF
+C90 m1_2700_2190# tspc_2/D 0.16fF
+C91 nand_0/z1 GND 0.16fF
+C92 tspc_0/Z4 tspc_0/a_740_n680# 0.08fF
+C93 tspc_0/D clk 0.29fF
+C94 tspc_1/Q tspc_0/a_740_n680# 0.15fF
+C95 Out tspc_1/Z4 0.28fF
+C96 tspc_1/Z2 tspc_1/Z4 0.36fF
+C97 clk tspc_2/Z2 0.11fF
+C98 tspc_2/Z4 tspc_2/D 0.11fF
+C99 nand_0/z1 tspc_1/Q 0.22fF
+C100 tspc_1/Z2 Out 0.19fF
+C101 tspc_0/D tspc_2/Q 0.04fF
+C102 mc1 GND 0.06fF
+C103 tspc_0/Z4 gnd 0.02fF
+C104 tspc_0/Z4 GND 0.44fF
+C105 vdd tspc_2/Z1 0.02fF
+C106 tspc_1/a_630_n680# tspc_1/Z4 0.12fF
+C107 tspc_1/Q GND 0.83fF
+C108 m1_2700_2190# tspc_1/Z4 0.08fF
+C109 tspc_0/D nand_0/z1 0.21fF
+C110 Out m1_2700_2190# 0.11fF
+C111 tspc_1/a_630_n680# tspc_1/Z2 0.01fF
+C112 tspc_0/Z4 tspc_1/Q 0.21fF
+C113 tspc_0/Z3 clk 0.64fF
+C114 tspc_0/D gnd 0.04fF
+C115 tspc_1/Z1 vdd 0.01fF
+C116 tspc_0/Z4 tspc_0/Z1 0.00fF
+C117 tspc_2/D vdd 0.07fF
+C118 tspc_1/Z3 GND 0.27fF
+C119 clk tspc_2/D 0.26fF
+C120 nand_1/z1 m1_2700_2190# 0.07fF
+C121 mc1 tspc_2/Z2 0.05fF
+C122 tspc_0/D GND 0.05fF
+C123 tspc_2/Z4 tspc_2/Z3 0.65fF
+C124 tspc_1/Z3 tspc_1/Q 0.21fF
+C125 tspc_1/a_630_n680# m1_2700_2190# 0.19fF
+C126 tspc_2/Z2 GND 0.16fF
+C127 tspc_0/Z4 tspc_0/D 0.11fF
+C128 tspc_2/Z3 tspc_2/a_630_n680# 0.05fF
+C129 tspc_0/D tspc_1/Q 0.32fF
+C130 tspc_0/a_630_n680# clk 0.01fF
+C131 tspc_0/Z3 tspc_0/a_740_n680# 0.33fF
+C132 tspc_0/Z1 tspc_0/D 0.03fF
+C133 tspc_0/Z2 clk 0.11fF
+C134 tspc_2/Z4 tspc_2/a_630_n680# 0.12fF
+C135 clk tspc_1/Z4 0.12fF
+C136 Out clk 0.51fF
+C137 tspc_1/Z2 clk 0.11fF
+C138 tspc_0/a_630_n680# tspc_0/a_740_n680# 0.19fF
+C139 tspc_0/Z3 GND 0.27fF
+C140 tspc_2/D gnd 0.14fF
+C141 tspc_2/D mc1 0.03fF
+C142 tspc_0/Z4 tspc_0/Z3 0.65fF
+C143 clk VDD 5.53fF 
+C144 nand_1/z1 VDD 0.20fF 
+C145 tspc_2/D VDD 3.12fF 
+C146 mc1 VDD 2.80fF 
+C147 gnd VDD 0.70fF
+C148 vdd VDD 0.74fF
+C149 nand_0/z1 VDD 0.20fF 
+C150 tspc_1/Q VDD 2.53fF 
+C151 tspc_2/Q VDD 3.24fF 
+C152 tspc_2/a_630_n680# VDD 0.52fF 
+C153 tspc_2/Z4 VDD 0.42fF 
+C154 tspc_2/Z3 VDD 2.00fF 
+C155 tspc_2/Z2 VDD 1.27fF 
+C156 tspc_2/Z1 VDD 0.99fF 
+C157 tspc_2/a_740_n680# VDD 1.89fF 
+C158 tspc_1/a_630_n680# VDD 0.52fF 
+C159 tspc_1/Z4 VDD 0.42fF 
+C160 tspc_1/Z3 VDD 2.00fF 
+C161 tspc_1/Z2 VDD 1.28fF 
+C162 tspc_1/Z1 VDD 0.99fF 
+C163 m1_2700_2190# VDD 3.86fF 
+C164 tspc_0/a_630_n680# VDD 0.52fF 
+C165 GND VDD 10.04fF 
+C166 tspc_0/Z4 VDD 0.42fF 
+C167 Out VDD 2.49fF 
+C168 tspc_0/Z3 VDD 2.00fF 
+C169 tspc_0/Z2 VDD 1.27fF 
+C170 tspc_0/Z1 VDD 0.99fF 
+C171 tspc_0/D VDD 2.59fF 
+C172 tspc_0/a_740_n680# VDD 1.89fF 
+
+.tran 0.1n 300n
+
+.control
+set hcopypscolor = 1
+set color0 = white
+set color1 = black
+
+run
+
+plot out+4 mc1+2 clk
+
+.endc
+.end

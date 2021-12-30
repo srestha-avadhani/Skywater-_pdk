@@ -1,0 +1,93 @@
+* SPICE3 file created from tspc.ext - technology: sky130A
+.lib "/home/sresthavadhani/sky/sky130A/libs.tech/ngspice/sky130.lib.spice" tt
+.param SUPPLY = 1.8
+.global vdd gnd
+
+Vdd vdd gnd 'SUPPLY'
+Vin_d D gnd pulse 0 1.8 0 100p 100p 10n 20n
+Vin_clk clk gnd pulse 0 1.8 0.5n 100p 100p 5n 10n
+
+
+X0 Z3 Z2 Z4 GND sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.8e+06u l=150000u
+X1 Z4 clk GND GND sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.8e+06u l=150000u
+X2 Z1 D VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2.8e+06u l=150000u
+X3 Z2 D GND GND sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=450000u l=150000u
+X4 Q Qbar VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=4e+06u l=150000u
+X5 Qbar Z3 VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=150000u
+X6 Z2 clk Z1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2.8e+06u l=150000u
+X7 Q Qbar GND GND sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=150000u
+X8 Qbar clk z5 GND sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X9 z5 Z3 GND GND sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X10 Z3 clk VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2.9e+06u l=150000u
+
+C0 VDD vdd 0.02fF
+C1 Qbar VDD 0.52fF
+C2 Qbar Z3 0.30fF
+C3 gnd z5 0.00fF
+C4 Z3 z5 0.05fF
+C5 VDD Z1 0.58fF
+C6 Z1 Z3 0.06fF
+C7 VDD Z2 0.36fF
+C8 Z2 Z3 0.16fF
+C9 VDD clk 0.02fF
+C10 clk Z3 0.34fF
+C11 VDD D 0.01fF
+C12 Z3 D 0.05fF
+C13 VDD Z4 0.01fF
+C14 gnd Z4 0.00fF
+C15 Z3 Z4 0.65fF
+C16 VDD Q 0.61fF
+C17 Z3 Q 0.05fF
+C18 Qbar GND 0.17fF
+C19 GND z5 0.61fF
+C20 Z2 GND 0.16fF
+C21 clk GND 0.02fF
+C22 Qbar z5 0.19fF
+C23 D GND 0.02fF
+C24 GND Z4 0.44fF
+C25 VDD Z3 0.67fF
+C26 GND Q 0.29fF
+C27 Z1 vdd 0.01fF
+C28 Z2 z5 0.01fF
+C29 Qbar clk 0.01fF
+C30 Z1 Z2 1.07fF
+C31 clk z5 0.01fF
+C32 Qbar Z4 0.08fF
+C33 Qbar Q 0.11fF
+C34 Z4 z5 0.12fF
+C35 clk Z2 0.05fF
+C36 Q z5 0.04fF
+C37 Z1 D 0.03fF
+C38 Z1 Z4 0.00fF
+C39 Z2 D 0.09fF
+C40 Z2 Z4 0.36fF
+C41 Z3 GND 0.27fF
+C42 clk D 0.04fF
+C43 clk Z4 0.11fF
+C44 D Z4 0.10fF
+C45 gnd VDD 0.15fF
+C46 vdd VDD 0.15fF
+C47 z5 VDD 0.52fF 
+C48 GND VDD 2.35fF 
+C49 Z4 VDD 0.41fF 
+C50 Q VDD 0.62fF 
+C51 Z3 VDD 1.33fF 
+C52 Z2 VDD 0.91fF 
+C53 Z1 VDD 0.41fF 
+C54 clk VDD 1.16fF 
+C55 D VDD 0.67fF 
+C56 VDD VDD 2.94fF 
+C57 Qbar VDD 1.26fF 
+
+.tran 0.1n 100n
+
+.control
+set hcopypscolor = 1
+set color0 = white
+set color1 = black
+
+run
+plot q+6 qbar+4 clk+2 D
+
+.endc
+.end

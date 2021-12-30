@@ -1,0 +1,53 @@
+* SPICE3 file created from and_pd.ext - technology: sky130A
+.lib "/home/sresthavadhani/sky/sky130A/libs.tech/ngspice/sky130.lib.spice" tt
+.param SUPPLY = 1.8
+.global vdd gnd
+
+Vdd vdd gnd 'SUPPLY'
+Vin_a A gnd pulse 0 1.8 0 100p 100p 10n 20n
+Vin_b B gnd pulse 0 1.8 0 100p 100p 20n 40n
+
+X0 Out Out1 VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.8e+06u l=150000u
+X1 Out1 B Z1 VSUBS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=900000u l=150000u
+X2 Out1 B VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.8e+06u l=150000u
+X3 Z1 A GND VSUBS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=900000u l=150000u
+X4 Out1 A VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.8e+06u l=150000u
+X5 Out Out1 GND VSUBS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=900000u l=150000u
+C0 Out1 A 0.01fF
+C1 VDD Out1 1.02fF
+C2 B Out1 0.27fF
+C3 Z1 Out 0.02fF
+C4 Z1 VDD 0.01fF
+C5 Z1 B 0.06fF
+C6 Out VDD 0.28fF
+C7 Out B 0.01fF
+C8 VDD A 0.02fF
+C9 B A 0.08fF
+C10 VDD B 0.02fF
+C11 GND Out1 0.18fF
+C12 Z1 GND 0.19fF
+C13 GND Out 0.12fF
+C14 GND A 0.06fF
+C15 GND VDD 0.02fF
+C16 Z1 Out1 0.18fF
+C17 Out Out1 0.19fF
+C18 Z1 VDD 0.19fF 
+C19 GND VDD 1.09fF 
+C20 Out VDD 0.38fF 
+C21 VDD VDD 1.59fF 
+C22 Out1 VDD 0.99fF 
+C23 B VDD 0.51fF 
+C24 A VDD 0.37fF 
+
+.tran 0.1n 100n
+
+.control
+set hcopypscolor = 1
+set color0 = white
+set color1 = black
+
+run
+plot Out+4 B+2 A
+
+.endc
+.end

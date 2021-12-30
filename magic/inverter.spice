@@ -1,0 +1,44 @@
+* SPICE3 file created from inverter.ext - technology: sky130A
+.lib "/home/sresthavadhani/sky/sky130A/libs.tech/ngspice/sky130.lib.spice" tt
+.param SUPPLY = 1.8
+.global vdd gnd
+
+Vdd vdd gnd 'SUPPLY'
+Vin in gnd pulse 0 1.8 0 100p 100p 10n 20n
+
+X0 OUT IN VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3.8e+06u l=150000u
+X1 OUT IN GND VSUBS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.5e+06u l=150000u
+R0 GND GND sky130_fd_pr__res_generic_l1 w=150000u l=450000u
+R1 VDD VDD sky130_fd_pr__res_generic_l1 w=150000u l=450000u
+C0 GND OUT 0.20fF
+*C1 li_280_n590# GND 0.03fF
+C2 IN GND 0.07fF
+*C3 VDD li_280_980# 0.03fF
+C4 GND GND 0.02fF
+C5 VDD VDD 0.02fF
+C6 VDD OUT 0.50fF
+C7 VDD IN 0.04fF
+C8 VDD GND 0.02fF
+C9 IN OUT 0.04fF
+C10 GND VDD 0.22fF
+C11 VDD VDD 0.23fF
+*C12 li_280_n590# VDD 0.05fF
+*C13 li_280_980# VDD 0.05fF
+C14 GND VDD 0.19fF 
+C15 OUT VDD 0.55fF 
+C16 VDD VDD 0.33fF 
+C17 IN VDD 0.42fF 
+
+.tran 0.1n 100n
+
+.control
+set hcopypscolor = 1
+set color0 = white
+set color1 = black
+
+run
+plot Out+2 in
+
+.endc
+.end
+

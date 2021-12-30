@@ -1,0 +1,44 @@
+* SPICE3 file created from nand.ext - technology: sky130A
+.lib "/home/sresthavadhani/sky/sky130A/libs.tech/ngspice/sky130.lib.spice" tt
+.param SUPPLY = 1.8
+.global vdd gnd
+
+Vdd vdd gnd 'SUPPLY'
+Vin_a A gnd pulse 0 1.8 0 100p 100p 10n 20n
+Vin_b B gnd pulse 0 1.8 0 100p 100p 20n 40n
+
+X0 OUT A VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=150000u
+X1 OUT B VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=2e+06u l=150000u
+X2 z1 A GND GND sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X3 OUT B z1 GND sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+C0 VDD A 0.01fF
+C1 z1 A 0.01fF
+C2 OUT A 0.01fF
+C3 gnd z1 0.01fF
+C4 gnd OUT 0.02fF
+C5 GND VDD 0.01fF
+C6 z1 GND 0.16fF
+C7 OUT GND 0.02fF
+C8 VDD B 0.01fF
+C9 z1 B 0.07fF
+C10 OUT B 0.15fF
+C11 vdd VDD 0.01fF
+C12 vdd OUT 0.05fF
+C13 GND A 0.06fF
+C14 z1 VDD 0.01fF
+C15 B A 0.06fF
+C16 OUT VDD 0.84fF
+C17 z1 OUT 0.21fF
+
+.tran 0.1n 100n
+
+.control
+set hcopypscolor = 1
+set color0 = white
+set color1 = black
+
+run
+plot Out+4 B+2 A
+
+.endc
+.end

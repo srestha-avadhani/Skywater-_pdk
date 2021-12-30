@@ -1,0 +1,97 @@
+* SPICE3 file created from tspc_r.ext - technology: sky130A
+.lib "/home/sresthavadhani/sky/sky130A/libs.tech/ngspice/sky130.lib.spice" tt
+.param SUPPLY = 1.8
+.global vdd gnd
+
+Vdd vdd gnd 'SUPPLY'
+Vin_d D gnd pulse 0 1.8 0 100p 100p 10n 20n
+Vin_clk clk gnd pulse 0 1.8 0.5n 100p 100p 5n 10n
+Vin_r R gnd pulse 0 1.8 0 100p 100p 50n 100n
+
+X0 Q Qbar1 GND VSUBS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=900000u l=150000u
+X1 Qbar Q GND VSUBS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=900000u l=150000u
+X2 Z1 D VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.8e+06u l=150000u
+X3 Q Qbar1 VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.8e+06u l=150000u
+X4 Qbar1 clk z5 VSUBS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=900000u l=150000u
+X5 z5 Z3 GND VSUBS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=900000u l=150000u
+X6 Z3 clk VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.8e+06u l=150000u
+X7 Z2 clk Z1 VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.8e+06u l=150000u
+X8 Z3 Z2 Z4 VSUBS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=900000u l=150000u
+X9 Z4 clk GND VSUBS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=900000u l=150000u
+X10 Z3 R GND VSUBS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=900000u l=150000u
+X11 Qbar Q VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.8e+06u l=150000u
+X12 Qbar1 Z3 VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.8e+06u l=150000u
+X13 Z2 D GND VSUBS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=900000u l=150000u
+C0 Z3 Z2 0.25fF
+C1 GND Z4 0.53fF
+C2 z5 Z3 0.11fF
+C3 Qbar VDD 0.24fF
+C4 Qbar1 clk 0.12fF
+C5 D VDD 0.04fF
+C6 Z3 VDD 0.51fF
+C7 GND clk 0.04fF
+C8 Z2 Z4 0.14fF
+C9 Z2 Z1 0.71fF
+C10 z5 Z4 0.04fF
+C11 Qbar1 Q 0.11fF
+C12 GND Qbar1 0.16fF
+C13 GND Q 0.26fF
+C14 D R 0.02fF
+C15 Z3 R 0.14fF
+C16 Z2 clk 0.19fF
+C17 Z1 VDD 0.32fF
+C18 z5 clk 0.04fF
+C19 clk VDD 0.13fF
+C20 Qbar1 z5 0.20fF
+C21 z5 Q 0.03fF
+C22 GND Z2 0.14fF
+C23 GND z5 0.56fF
+C24 Qbar1 VDD 0.32fF
+C25 VDD Q 0.33fF
+C26 GND VDD 0.02fF
+C27 clk R 0.51fF
+C28 Z3 Z4 0.20fF
+C29 Z3 Z1 0.09fF
+C30 clk D 0.03fF
+C31 Z3 clk 0.65fF
+C32 Qbar1 R 0.01fF
+C33 GND R 0.04fF
+C34 Qbar Qbar1 0.01fF
+C35 Qbar Q 0.21fF
+C36 Z2 VDD 0.10fF
+C37 z5 VDD 0.01fF
+C38 Qbar GND 0.14fF
+C39 Qbar1 Z3 0.38fF
+C40 Z3 Q 0.03fF
+C41 GND D 0.01fF
+C42 GND Z3 0.32fF
+C43 clk Z4 0.02fF
+C44 clk Z1 0.17fF
+C45 Z2 R 0.21fF
+C46 Z2 D 0.05fF
+C47 z5 VDD 0.52fF 
+C48 Z4 VDD 0.53fF 
+C49 GND VDD 3.47fF 
+C50 R VDD 0.49fF 
+C51 Qbar VDD 0.38fF 
+C52 Z2 VDD 0.84fF 
+C53 Z1 VDD 0.34fF 
+C54 VDD VDD 3.22fF 
+C55 Q VDD 0.94fF 
+C56 Qbar1 VDD 0.86fF 
+C57 Z3 VDD 1.27fF 
+C58 clk VDD 1.43fF 
+C59 D VDD 0.42fF 
+
+.tran 0.1n 100n
+
+.control
+set hcopypscolor = 1
+set color0 = white
+set color1 = black
+
+run
+plot q+6 qbar+4 clk+2 D
+
+.endc
+.end
